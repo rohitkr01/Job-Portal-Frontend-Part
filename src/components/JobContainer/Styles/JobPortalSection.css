@@ -1,0 +1,17 @@
+.JobPortalSection{
+    padding: 20px;
+}
+.JobPortalSection .jobPortal-header{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px 40px;
+    /* color: white; */
+    background-color: #adc3ef;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.JobPortalSection .JP-All-Jobs{
+    margin-top: 30px;
+}

@@ -1,0 +1,15 @@
+1. Created react app using  create react app "job portal"
+
+2. Installed React-icons by using command "npm install react-icons"
+
+3. Installed react-router-dom by using command "npm install react-router-dom"
+
+4. Installed axios to integrate backend Https server to the cliend by using command "npm install axios"
+
+
+
+
+---------------------------
+--------For chatbot--------------
+
+1. install package by command 'npm install @chatscope/chat-ui-kit-react'

@@ -1,0 +1,13 @@
+.App{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;    
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+
+    display: inline-flex;  
+    flex-direction: row;
+    
+
+}

@@ -1,0 +1,179 @@
+.JobList-contaioner{
+    box-sizing: border-box;
+    max-width: fit-content;
+    background-color: #f4f4f4;
+    border: 1px solid blue;
+    border-radius: 10px;
+    
+}
+.JobList-contaioner > h2{
+    text-align: center;
+    font-size: 30px;
+    
+    font-weight: 1000;
+    font-style: oblique;
+}
+
+.jobList-inner-container  ul{
+    /* width: 100%; */
+    /* border: 1px solid rgb(89, 36, 234); */
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between; */
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.jobList-inner-container  ul li{
+    list-style: none;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid rgb(97, 95, 100);
+    border-radius: 10px;
+    /* padding: 10px; */
+    padding: 0 10px 10px 10px;
+    transition: all 0.2s ease-in-out;
+}
+.jobList-inner-container  ul li > h3{
+    padding: 3px 0;
+    text-align: center;
+    background-color: #eae9e9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.role_loc , .pos_sal , .job_button{
+    display: flex;
+    justify-content: space-between;
+}
+.role_loc{
+    margin-top: -20px;
+}
+
+.role_loc > p > span{
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(177, 174, 174);
+}
+
+#loc {
+    color: rgb(183, 102, 218);
+    font-weight: 500;
+}
+
+.skills{
+    margin-top: -15px;
+}
+
+.skills > h5{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(114, 132, 78);
+}
+
+.all-skills{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: -20px;
+}
+
+.all-skills > .skill{
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.pos_sal{
+    padding: -10px 0;
+}
+
+.pos_sal p{
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.job_button{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.job_button button{
+    background: rgb(60, 60, 240);
+    color : white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-Radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;   
+}
+
+.job_button button:hover{
+    background: rgb(148, 148, 237);
+    color : rgb(58, 54, 54);
+    font-weight: bold;
+    /* scale: 1.04; */
+    
+}
+
+/* Responsive Style */
+/* For Laptop and Desktop View */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    
+}
+
+
+/* For Tablet and Laptop View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+    .all-jobs{
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 10px;
+        grid-row-gap: 15px;
+    }
+
+}
+/* For Tablet View */
+@media screen and (min-device-width: 426px) and (max-device-width: 767px){
+    .all-jobs{
+        
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media screen and (max-device-width: 600) and (orientation: portrait) {
+    .all-jobs{
+        display: grid !important;
+        grid-template-columns: auto auto;
+    }
+
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 425px) and (orientation: portrait) {
+    .all-jobs{
+        display: grid !important;
+        grid-template-columns: auto auto;
+    }
+
+}
+
+@media screen and (max-device-width: 375px) and (orientation: portrait) {
+
+}
+
+@media screen and (max-device-width: 320px) and (orientation: portrait) {
+    
+}
+  
