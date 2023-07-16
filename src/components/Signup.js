@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const Signup = () => {
 
+  const [name, setName] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   //To display successfull message
@@ -17,7 +18,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:8080/users/signup', { username, password });
+      const response = await axios.post('http://localhost:8080/users/signup', {name, username, password });
       console.log(response.data); // Handle the response as needed
       setSuccessMessage('Signup successful!');
     } catch (error) {
@@ -33,12 +34,9 @@ const Signup = () => {
             <div className="signup-content-container">
                 <h2>Signup</h2>
                 <form onSubmit={handleSubmit}>
-                    {/* <label htmlFor="first-name">First Name:</label>  <br />
-                    <input type="text" id="first-name" name="first-name" placeholder="Enter first name" required />
+                    <label htmlFor="name">First Name:</label>  <br />
+                    <input type="text" id="name" name="name" placeholder="Enter Your Full Name" value={name} onChange={(e) => setName(e.target.value)}  required />
                     <br />
-                    <label htmlFor="last-name">Last Name:</label>  <br />
-                    <input type="text" id="last-name" name="last-name" placeholder="Enter last name" required />
-                    <br /> */}
                     <label htmlFor="email">Email:</label>  <br />
                     <input type="email" id="email" name="email" placeholder="Enter email id" value={username} onChange={(e) => setUsername(e.target.value)} required />
                     <br />

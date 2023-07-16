@@ -4,6 +4,7 @@ import './App.css';
 import About from './components/About';
 import ContactUs from './components/ContactUs';
 import Home from './components/Home';
+import SoftSkillSection from "./components/Soft-Skills/SoftSkillSection";
 // import JobList from './components/JobContainer/JobList';
 import Login from './components/Login';
 // import Navbar from './components/Navbar';
@@ -25,6 +26,8 @@ function App() {
           <Route exact path='/' element={<Home />} />
           <Route path='/jobs/all-jbs' element={<JobPortalSection />} />
           <Route path='/about' element={<About />} />
+          <Route path='/soft-skill' element={<SoftSkillSection />} />
+
           <Route path='/contact' element={<ContactUs />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />

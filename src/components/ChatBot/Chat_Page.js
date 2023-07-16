@@ -9,10 +9,10 @@ function ChatUIPage() {
   return (
     <div className='chat-ui-container'>
     {/* <img src={butterfly} alt="" /> */}
-      <div className="photo">
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis saepe quasi tempora soluta ab aliquid delectus nobis laudantium quisquam placeat mollitia dolorem, inventore sint nesciunt ullam assumenda amet ipsam id.</p>
+      <div className="chatNavSection-tittle">
+        <p>Have you any dought? Want a conversation with Bot. </p>
       </div>
-      <div className="chatbot">
+      <div className="chatbot-section-container">
         < Chatbot />
       </div>
     </div>

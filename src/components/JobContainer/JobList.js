@@ -1,4 +1,5 @@
 import React , { useEffect, useState }   from 'react';
+import axios from 'axios';
 import { FaMapMarkerAlt,FaBriefcase, FaRupeeSign } from 'react-icons/fa';
 
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
@@ -10,6 +11,12 @@ const JobList = () => {
     const [jobList, setJobList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    //To display successfull message
+    const [appliedJobs, setAppliedJobs] = useState([]);
+
+
+    
 
 
     useEffect(() => {
@@ -44,6 +51,32 @@ const JobList = () => {
         return <div className="error">{error}</div>;
     }
     
+// **********************************
+    // Apply for job
+// **********************************
+
+
+const applyForJob = async (userId, jobId) => {
+    try {
+      await axios.post(`http://localhost:8080/jobs/apply?userId=${userId}&jobId=${jobId}`);
+      
+      const appliedJob = jobList.find(job => job.id === jobId);
+      setAppliedJobs(prevAppliedJobs => [...prevAppliedJobs, appliedJob]);
+
+      console.log('Job applied successfully');
+      // You can add additional logic or display a success message after the API call
+    } catch (error) {
+      console.error('Failed to apply for the job', error);
+      // Handle any errors that occur during the API call
+      
+    }
+};
+
+const userId = 4; 
+
+// ********** end of Apply for job **********
+
+
     return (
         // <div className="job">
         //     <h2>Racent Job  </h2>
@@ -87,7 +120,18 @@ const JobList = () => {
                     {/* More Details & Apply */}
                     <div className="job_button">
                         <button type="submit" >More Details </button>
-                        <button type='submit'>Apply now</button>
+                        
+                        
+                        <button
+                        type='submit'
+                        onClick={() => applyForJob(userId, job.id)}
+                        style={{
+                            backgroundColor: appliedJobs.includes(job) ? 'green' : 'blue',
+                        }}
+                        >
+                        {appliedJobs.includes(job) ? 'Applied' : 'Apply now'}
+                        </button>
+                       
                     </div>
 
                 </li>

@@ -1,109 +1,145 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './UserAccount.css';
-
 import LoadingScreen from '../LoadingScreen/LoadingScreen';
 
 function UserAccount() {
-    const [userAccount, setUserAccount] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    // const [isEditable, setIsEditable] = useState(false);
+  const [userAccount, setUserAccount] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [whatsappNumber, setWhatsappNumber] = useState('');
+  const [address, setAddress] = useState('');
 
-    useEffect(() => {
-        fetchUserAccount();
-    }, []);
+  //To display successfull message
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-    const fetchUserAccount = async () => {
-        try {
-            const response = await fetch('http://localhost:8080/users/amit123@gmail.com'); // Replace with your API endpoint
-            if (!response.ok) {
-                throw new Error('Failed to fetch user account');
-            }
-            const data = await response.json();
-            setUserAccount(data);
-            setLoading(false);
-        } catch (error) {
-            console.error('Error fetching user account:', error);
-            setError(error.message);
-            setLoading(false);
-        }
-    };
 
-  
+  useEffect(() => {
+    fetchUserAccount();
+  }, []);
 
-    if (loading) {
-      return <div className="loading"> <LoadingScreen /></div>;
+  const fetchUserAccount = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/users/aarav@gmail.com'); // Replace with your API endpoint
+      setUserAccount(response.data);
+      setName(response.data.name);
+      setEmail(response.data.email);
+      setMobileNumber(response.data.mobileNumber);
+      setWhatsappNumber(response.data.whatsappNumber);
+      setAddress(response.data.address);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching user account:', error);
+      setError(error.message);
+      setLoading(false);
+    }
+  };
+
+  const updateDetails = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.put('http://localhost:8080/users/update-user/aarav@gmail.com', {
+        name,
+        email,
+        mobileNumber: mobileNumber,
+        whatsappNumber: whatsappNumber,
+        address,
+      });
+      setUserAccount({
+        ...userAccount,
+        name,
+        email,
+        mobileNumber: mobileNumber,
+        whatsappNumber: whatsappNumber,
+        address,
+      });
+      console.log('User account updated successfully');
+      setSuccessMessage('Account updated !');
+    } catch (error) {
+      console.error('Failed to update user account:', error);
+      setErrorMessage('An error occured !');
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <LoadingScreen />
+      </div>
+    );
   }
 
-    if (error) {
-        return <div className="error">{error}</div>;
-    }
-
-
-    const userDetailsItems =[ 
-        {
-            text: "Name",
-            value: userAccount.name,
-            htmlFor: "name",
-            id:"name",
-
-        },
-        {
-            text: "Email",
-            value: userAccount.username,
-            htmlFor: "email",
-            id:"email",
-        },
-        {
-            text : "Username",
-            value: userAccount.username,
-            htmlFor: "username",
-            id:"username",
-        },
-        {   text:"Mobile Number",
-            value : userAccount.mobile_number,
-            htmlFor: "mobile_no",
-            id:"mobile_no",
-        },
-        {   text:"WhatsApp Number",
-            value : userAccount.whatsapp_number,
-            htmlFor: "whatsapp_no",
-            id:"whatsapp_no",
-        },
-        {   text:"Address",
-            value : userAccount.address,
-            htmlFor: "address",
-            id:"address",
-        },
-
-        // Add more form fields for other user account details
-    ];
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return (
     <div className="user-account-container">
       <h1>User Account Details</h1>
       {userAccount ? (
-        <form>
-        {userDetailsItems.map(( val ,key ) => (
-            <div className="form-group" key={key}>
-             
-              <div>
-              <label htmlFor={val.htmlFor}>{val.text}:</label>
-                <input 
-                        type="text" 
-                        id={val.id} 
-                        name={val.name}
-                        value={val.value} 
-                        readOnly 
-                /> 
-              </div> 
-            </div> 
-        ))}
-        
-        
-        <button type='submit' className='user-update-btn'>Update</button>
+        <form onSubmit={updateDetails}>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="mobile_no">Mobile Number:</label>
+            <input
+              type="text"
+              id="mobile_no"
+              name="mobile_no"
+              value={mobileNumber}
+              onChange={(e) => setMobileNumber(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="whatsapp_no">WhatsApp Number:</label>
+            <input
+              type="text"
+              id="whatsapp_no"
+              name="whatsapp_no"
+              value={whatsappNumber}
+              onChange={(e) => setWhatsappNumber(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address">Address:</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
+          </div>
+
+          <br />
+          <button type="submit" className="user-update-btn">Update</button>
+          {/* Display success mess  age if it exists */}
+          {successMessage && <p>{successMessage}</p>}
+          {errorMessage && <p>{errorMessage}</p>}
+
         </form>
-        
       ) : (
         <div>No user account found.</div>
       )}

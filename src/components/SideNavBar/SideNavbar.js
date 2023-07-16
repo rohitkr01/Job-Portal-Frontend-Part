@@ -50,9 +50,9 @@ const SideNavbar = ({children}) => {
 			target: "",
 		},
 		{
-			text: "About Us",
-			icon: "icons/chatbot-icon.svg",
-            path: "/about",
+			text: "Soft Skills",
+			icon: "icons/pie-chart.svg",
+            path: "/soft-skill",
 			target: "",
 		},	
 		

@@ -1,0 +1,89 @@
+.softSkillPage-main-container{
+    padding: 0 20px;
+    padding-bottom: 40px;
+    background-color: rgb(240, 240, 248);
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-column-gap: 10px;
+}
+.softSkillPage-left-container{
+    background-color: white;
+    /* border: 1px solid black; */
+    padding: 0 5px;
+}
+
+.softSkillPage-left-container , .softSkillPage-right-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.softSkill-left-Item , .softSkill-right-Item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    padding-right: 0;
+    /* border: 1px solid gray; */
+    border-radius: 10px;
+    background: #eeeff4;
+    color: black;
+
+}
+.softSkill-left-Item1{
+    background: #303030;
+    color: white;
+}
+.softSkill-left-Item a{
+    text-decoration: none;
+    padding: 10px 30px;
+    color: rgb(71, 14, 133);
+    background-color: skyblue;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+/* Right side container styling */
+
+.softSkillPage-right-container{
+    padding-top: 20px;
+}
+
+.softSkill-right-Item {
+    padding-right: 0;
+    background-color: white;
+    color: blue;
+}
+.softSkill-right-Item p{
+    font-size: 17px;
+    font-weight: 600;
+}
+.softSkill-right-Item p span{
+    font-weight: 800;
+}
+.softSkill-right-Item a{
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    background-color: skyblue;
+    /* border: 1px solid black; */
+    border-radius: 10px;
+}
+
+.softSkill-left-Item a:hover{
+    background-color: rgb(39, 33, 98);
+    color: white;
+    padding: 11px 32px;
+    font-size: 15px;
+}
+.softSkill-right-Item a:hover{
+    background-color: rgb(39, 33, 98);
+    color: white;
+    font-size: 15px;
+    padding: 11px 17px;
+}
