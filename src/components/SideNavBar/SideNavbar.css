@@ -6,14 +6,15 @@
 
 .navbar-container {
 	/* background-color: var(--dark); */
-	background-color: rgb(223, 207, 207);
-	width: 70px;
+	background-color: rgb(220, 224, 240);
+	box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+	width: 60px;
 	height: 100vh;
 	color: var(--black);
 	
 	transition: width 0.3s ease;
 
-	position: sticky;
+	position: fixed;
 	top: 0;
 	left: 0;
 

@@ -27,7 +27,7 @@ const Home = () => {
       <main>
         <div className='rightside_container'>
             <div className="home_content">
-              <h2>This is Home Page</h2>
+              {/* <h2>This is Home Page</h2> */}
               <img src={job_img} alt="job_img" width='100%' />
 
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptas, nulla incidunt neque perspiciatis facere nihil perferendis, deleniti a id maxime illo error rerum, ut velit sunt qui libero? Ipsam.</p>

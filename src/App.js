@@ -11,9 +11,11 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import JobPostingForm from './components/JobContainer/PostJob';
 import Chatbot from './components/ChatBot/Chatbot';
+// import ChatBox from "./components/ChatBot2/ChatBox";
 import SideNavbar from './components/SideNavBar/SideNavbar';
 import ChatUIPage from './components/ChatBot/Chat_Page';
 import UserAccount from "./components/User/UserAccount";
+// import UserSection from "./components/User/UserSection";
 import JobPortalSection from "./components/JobContainer/JobPortalSection";
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/chatbot' element={<ChatUIPage />} />
           <Route path='/chatbot' element={<Chatbot />} />
+          {/* <Route path='/chatbot' element={<ChatBox />} /> */}
           <Route path='/jobs/post-job' element={<JobPostingForm />} />
           <Route path='/user' element={<UserAccount />} />
         </Routes>
