@@ -2,12 +2,14 @@ import React from 'react';
 // import Navbar from './Navbar';
 // import LeftNavbar from './Left-Navbar';
 // import SideNavbar from './SideNavBar/SideNavbar';
+
 import job_img from '../images/job_img2.png';
 import '../style/Home.css'
 
 const Home = () => {
   return (
     <div className="home">
+      
       <header>
         <div className="h-logo">
           <h3>Job10X <span>Explore Jobs</span></h3>

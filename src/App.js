@@ -11,7 +11,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import JobPostingForm from './components/JobContainer/PostJob';
 import Chatbot from './components/ChatBot/Chatbot';
-// import ChatBox from "./components/ChatBot2/ChatBox";
 import SideNavbar from './components/SideNavBar/SideNavbar';
 import ChatUIPage from './components/ChatBot/Chat_Page';
 import UserAccount from "./components/User/UserAccount";
@@ -22,6 +21,7 @@ function App() {
   return (
       <div className='App'>
         <SideNavbar />
+        
         {/* <Navbar /> */}
         <Routes> 
           {/* <Route exact path='/' element={<Dashboard />} /> */}
@@ -35,7 +35,6 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/chatbot' element={<ChatUIPage />} />
           <Route path='/chatbot' element={<Chatbot />} />
-          {/* <Route path='/chatbot' element={<ChatBox />} /> */}
           <Route path='/jobs/post-job' element={<JobPostingForm />} />
           <Route path='/user' element={<UserAccount />} />
         </Routes>

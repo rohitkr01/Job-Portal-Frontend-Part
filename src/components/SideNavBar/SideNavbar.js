@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./SideNavbar.css";
+import ChatBox from "../ChatBot2/ChatBox";
 
 const SideNavbar = ({children}) => {
 
@@ -82,7 +83,8 @@ const SideNavbar = ({children}) => {
 		// },
 	];
 	return (
-        <div className="side-nav-container"> 
+        <div className="side-nav-container">
+			<ChatBox /> 
 			<div className={`navbar-container `}
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}>

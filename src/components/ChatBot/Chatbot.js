@@ -3,7 +3,7 @@ import './Chatbot.css'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react';
 
-const API_KEY = "sk-xxxxxxxxxxxxxxxxxxxC";
+const API_KEY = "sk-qXXXXXXXXXXXXXXXXX7C";
 
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
