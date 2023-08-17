@@ -69,18 +69,18 @@ const SideNavbar = ({children}) => {
             path: "/user",
 			target: "",
 		},
-		// {
-		// 	text: "Settings",
-		// 	icon: "icons/settings.svg",
-		// 	path: "/setting",
-        //     target: "",
-		// },
-		// {
-		// 	text: "Login",
-		// 	icon: "icons/login-icon.svg",
-        //     path: "/login",
-		// 	target: "",
-		// },
+		{
+			text: "Settings",
+			icon: "icons/settings.svg",
+			path: "/setting",
+            target: "",
+		},
+		{
+			text: "Login",
+			icon: "icons/login-icon.svg",
+            path: "/login",
+			target: "",
+		},
 	];
 	return (
         <div className="side-nav-container">

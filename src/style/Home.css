@@ -3,6 +3,12 @@
     --header-button-bg-color: #478df3;
 }
 
+.home-section-container{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -27,7 +33,7 @@ header{
     text-align: center;
 }
 
-.h-login-signup button{
+.h-login-signup a{
     /* font-family: 'Times New Roman', Times, serif; */
     font-size: 15px;
     font-weight: 700;
@@ -40,7 +46,7 @@ header{
 
     cursor: pointer;
 }
-.h-login-signup button:hover{
+.h-login-signup a:hover{
     background-color: #b2d0fd;
     color: chocolate;
     /* scale: 1.009; */
@@ -68,3 +74,163 @@ header{
     color: white;
     font-weight: 500;
 }
+
+
+/* ------------ */
+/* .main-container  {
+    padding: 0 30px;
+} */
+
+.main-container  .home-content{
+    /* background: url(../images/job_img2.png); */
+    height: 80vh;
+    /* border: 1px solid red; */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.main-container  .home-content-left{
+    width: 500px;
+}
+
+.main-container  .home-content-left h1{
+    font-size: 60px;
+}
+
+.heading-span{
+    color: green;
+}
+
+.search-section{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#search-text-box{
+    padding-left: 10px;
+}
+
+.search-section button{
+    padding: 10px 15px;
+    background-color: rgb(30, 171, 15);
+    font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.search-section button:hover{
+    background-color: rgb(18, 128, 6);
+}
+
+
+/* Job  process styling */
+.job-process-container{
+    background-color: rgb(240, 236, 243);
+    padding: 10px;
+    border-radius: 5px;
+}
+.job-process-container > h1{
+    text-align: center;
+}
+
+.job-process-container .process-container{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.process-container .service-box{
+    height: 250px;
+    padding: 10px;
+    border-radius: 5px;
+
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.process-container .service-box h3{
+    color: rgb(242, 28, 28);
+}
+
+.process-container .service-box a{
+    font-size: 15px;
+    text-decoration: none;
+    padding: 5px 10px;
+    background-color: red;
+    border-radius: 20px;
+    color: white;
+    display: none;
+}
+
+
+.read-more-link span,
+.read-more-link img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+  
+
+
+.process-container .service-box .job-process-img{
+    border-radius: 50%;
+    padding: 5px;
+
+    transition: .03 ease-in-out;
+}
+
+
+.process-container .service-box:hover{
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.889);
+}
+.process-container .service-box:hover .job-process-img{
+    background-color: rgb(60, 59, 59);
+    color: white;
+}
+
+.process-container .service-box .showWhenHover{
+    display: none;
+}
+.process-container .service-box:hover .showWhenHover{
+    display: inline-block;
+}
+
+.process-container .service-box:hover .hideWhenHover{
+    display: none;
+}
+
+.process-container .service-box:hover a{
+    display: inline-block;
+    transition: .03 ease-in-out;
+}
+
+
+/* Footer Styling  */
+
+footer{
+    padding: 10px 30px;
+    color: white;
+}
+
+footer .footer-inside-container{
+    background-color: black;
+    border-radius: 10px;
+    padding: 0 10px;
+    height: 200px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+}
+

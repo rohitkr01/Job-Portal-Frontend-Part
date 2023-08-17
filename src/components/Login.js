@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../style/Login.css';
-import img1 from '../images/img1.jpg';
+// import img1 from '../images/job_img.png';
 
 import axios from 'axios';
 
@@ -37,8 +37,21 @@ const Login = () => {
     
     <div className='login'>
       <div className="login-container">
+        <div className="login-left-container">
+            <h2>Welcome Bak to Aarav</h2>
+            <div className="l-circle"></div>
+            <div className="left">
+              <h3>Smartz helps you land the Job that you deserve</h3>
+
+              <p>Optimize your resume to stand out from the competition</p>
+
+              <p>Follow you passion with us.....</p>
+            </div>
+        </div>
+
         <div className="login-content-container">
           <h2>Login</h2>
+          <Link>Log in with Google</Link>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username or Email *</label> <br />
             <input type="email" id='username' name='username' placeholder='Username or Email' value={username} onChange={(e) => setUsername(e.target.value)} required />
@@ -55,10 +68,6 @@ const Login = () => {
          <p><Link to="/">Cancel</Link></p>
         </div>
 
-        <div className="side_desc">
-          <img src={img1} alt="image1" width='100%' />
-        </div>
-        
       </div>
       
     </div>

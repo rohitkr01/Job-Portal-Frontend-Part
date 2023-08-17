@@ -38,16 +38,31 @@
     width: 400px;
     padding-left: 10px;
 }
+.form-group textarea{
+    padding-left: 10px;
+    padding-right: -10px;
+}
+
+.fetch-btn-container p{
+    color: white;
+    
+}
 
 .user-update-btn{
-    background-color: rgb(95, 211, 13);
+    background-color: rgb(233, 200, 70);
     font-weight: 700;
-    width: 80px;
-    padding: 5px;
+    width: 100px;
+    padding: 10px;
     border-radius: 5px;
     outline: none;
     border: none;
     cursor: pointer;
+}
+
+.user-update-btn:hover{
+    background-color: rgb(154, 243, 30);
+    scale: 1.03;
+    transition: 0.03 ease-in-out;
 }
   
 .loading {
@@ -56,7 +71,7 @@
     height: 200px;
     font-size: 20px;
     font-weight: bold;
-    color: #555;
+    color: #eee3e3;
 }
 
 .error {

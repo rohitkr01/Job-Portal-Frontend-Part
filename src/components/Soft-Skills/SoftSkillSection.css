@@ -76,14 +76,13 @@
 }
 
 .softSkill-left-Item a:hover{
-    background-color: rgb(39, 33, 98);
-    color: white;
-    padding: 11px 32px;
+    background-color: rgb(61, 142, 174);
+    padding: 10.5px 31px;
     font-size: 15px;
 }
 .softSkill-right-Item a:hover{
-    background-color: rgb(39, 33, 98);
+    background-color: rgb(134, 125, 217);
     color: white;
     font-size: 15px;
-    padding: 11px 17px;
+    padding: 10.5px 16px;
 }

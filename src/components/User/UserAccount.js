@@ -16,7 +16,16 @@ function UserAccount() {
   //To display successfull message
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [showParagraph, setShowParagraph] = useState(false);
 
+  const handleButtonClick = () => {
+    setShowParagraph(true);
+
+    // Hide the paragraph after 5 seconds
+    setTimeout(() => {
+      setShowParagraph(false);
+    }, 5000);
+  };
 
   useEffect(() => {
     fetchUserAccount();
@@ -134,12 +143,12 @@ function UserAccount() {
           </div>
 
           <br />
-          <button type="submit" className="user-update-btn">Update</button>
+          <button type="submit" className="user-update-btn"  onClick={handleButtonClick} >Update</button>
           {/* Display success mess  age if it exists */}
-          {successMessage && <p>{successMessage}</p>}
-          {errorMessage && <p>{errorMessage}</p>}
+          {showParagraph && successMessage && <p>{successMessage}</p> }
+          {showParagraph && errorMessage && <p>{errorMessage}</p> }
 
-        </form>
+          </form>
       ) : (
         <div>No user account found.</div>
       )}

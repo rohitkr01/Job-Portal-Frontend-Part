@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './ChatBox.css';
 import Chatbot from '../ChatBot/Chatbot';
 
-import chatbotImg from "../../images/chatbot.png"
+import chatbotImg from "../../images/chatbot.png";
+import closeIcon from "../../images/close-icon.png";
 
 const ChatBox = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,9 +14,16 @@ const ChatBox = () => {
 
   return (
     <div className="chatbox-container">
+
       <div className={`chatbox-toggle ${isOpen ? 'open' : ''}`} onClick={toggleChatbot}>
-        <img src={chatbotImg} width="30px"  alt="Chatbot Icon" />
+        {isOpen ? (
+          <img src={closeIcon} width="30px"  alt="Close Icon" />
+        ) : (
+          <img src={chatbotImg} width="30px"  alt="Chatbot Icon" />
+        )}
+        
       </div>
+      
       <div className={`chat-section ${isOpen ? 'open' : ''}`}>
         {/* Your chatbot UI components go here */}
         <div className="chatbox-top">

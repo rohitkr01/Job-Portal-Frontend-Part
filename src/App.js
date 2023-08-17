@@ -5,17 +5,17 @@ import About from './components/About';
 import ContactUs from './components/ContactUs';
 import Home from './components/Home';
 import SoftSkillSection from "./components/Soft-Skills/SoftSkillSection";
-// import JobList from './components/JobContainer/JobList';
 import Login from './components/Login';
-// import Navbar from './components/Navbar';
 import Signup from './components/Signup';
 import JobPostingForm from './components/JobContainer/PostJob';
 import Chatbot from './components/ChatBot/Chatbot';
 import SideNavbar from './components/SideNavBar/SideNavbar';
 import ChatUIPage from './components/ChatBot/Chat_Page';
-import UserAccount from "./components/User/UserAccount";
+// import UserAccount from "./components/User/UserAccount";
+import User3 from "./components/User/User3";
 // import UserSection from "./components/User/UserSection";
 import JobPortalSection from "./components/JobContainer/JobPortalSection";
+import AppliedJobs from "./components/JobContainer/AppliedJobs";
 
 function App() {
   return (
@@ -36,7 +36,8 @@ function App() {
           <Route path='/chatbot' element={<ChatUIPage />} />
           <Route path='/chatbot' element={<Chatbot />} />
           <Route path='/jobs/post-job' element={<JobPostingForm />} />
-          <Route path='/user' element={<UserAccount />} />
+          <Route path='/user' element={<User3 />} />
+          <Route path="/jobs/applied-job" element={<AppliedJobs />} />
         </Routes>
       </div>
   );

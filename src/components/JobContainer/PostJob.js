@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 
+
 const JobPostingForm = () => {
   const [companyName, setCompanyName] = useState('');
   const [jobRole, setJobRole] = useState('');
@@ -26,7 +27,16 @@ const JobPostingForm = () => {
   //To display successfull message
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [showParagraph, setShowParagraph] = useState(false);
 
+  const handleButtonClick = () => {
+    setShowParagraph(true);
+
+    // Hide the paragraph after 5 seconds
+    setTimeout(() => {
+      setShowParagraph(false);
+    }, 5000);
+  };
 
   
 
@@ -166,9 +176,11 @@ const JobPostingForm = () => {
           </div>
           <br />
           <div>
-            <button type="submit" className="submit-btn">Submit</button>
-            {successMessage && <p>{successMessage}</p>}
-            {errorMessage && <p>{errorMessage}</p>}
+            <button type="submit" className="submit-btn" onClick={handleButtonClick}>Submit</button>
+
+            {showParagraph && successMessage && <p>{successMessage}</p> }
+            {showParagraph && errorMessage && <p>{errorMessage}</p> }
+
           </div>
           
         </form>
