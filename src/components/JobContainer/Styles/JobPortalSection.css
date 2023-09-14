@@ -1,7 +1,9 @@
 .JobPortalSection{
+    width: 100%;
     padding: 20px;
 }
 .JobPortalSection .jobPortal-header{
+    width: calc(100% - 80px);
     font-size: 16px;
     font-weight: bold;
     padding: 5px 40px;

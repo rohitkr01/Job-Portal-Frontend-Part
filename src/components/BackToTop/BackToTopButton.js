@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './BackToTopButton.css';
 
-import UpArrowImg from '../../images/Home-page-img/arrow_upward_white.svg'
+// import UpArrowImg from '../../images/Home-page-img/arrow_upward_white.svg'
 
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,7 +29,8 @@ const BackToTopButton = () => {
       className={`back-to-top-button ${isVisible ? 'visible' : 'hidden'}`}
       onClick={scrollToTop}
     >
-     <img src={UpArrowImg} alt="arrow_upward_img" />
+    <i>Back To Top</i>
+     {/* <img src={UpArrowImg} alt="arrow_upward_img" /> */}
     </div>
   );
 };

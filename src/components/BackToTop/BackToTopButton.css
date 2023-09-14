@@ -1,18 +1,18 @@
 .back-to-top-button {
   position: fixed;
-  bottom: 30px;
-  left: 90px;
-  background-color: #537ae6;
+  bottom: 0;
+  right: 10%;
+  background-color: #58230c;
   color: #fff;
-  padding: 8px;
+  padding: 4px 10px 2px 10px;
   
-  border-radius: 50%;
+  border-radius: 5% 5% 0 0;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s;
   z-index: 999;
 
-  background-image: radial-gradient(circle, #007bff 20%, rgba(0, 123, 255, 0) 30%);
+  background-image: radial-gradient(circle, #676869 20%, rgba(0, 123, 255, 0) 30%);
   background-size: 150% 150%;
   animation: waterWave 1.5s infinite;
 }
@@ -34,7 +34,8 @@
 }
 
 .back-to-top-button i {
-  font-size: 20px;
+  font-size: 17px;
+  
 }
 
 .back-to-top-button span {

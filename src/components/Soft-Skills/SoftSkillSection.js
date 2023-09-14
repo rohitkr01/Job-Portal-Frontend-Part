@@ -1,5 +1,7 @@
 import React from 'react';
 import './SoftSkillSection.css';
+import BackToTopButton from '../BackToTop/BackToTopButton';
+
 import softSkill_image1 from '../../images/soft-skills-ui-img/soft-skiil-img1.svg';
 import right_arrow from '../../images/soft-skills-ui-img/right-arrow.svg';
 import circle_right_arrow from '../../images/soft-skills-ui-img/circle-right-arrow.svg';
@@ -19,6 +21,7 @@ import resume_idea from '../../images/soft-skills-ui-img/resume-idea.svg';
 function SoftSkillSection() {
   return (
     <div className='softSkillPage-main-container'>
+        <BackToTopButton />
         <div className='softSkillPage-left-container'>
             <h2>Welcome Back to User</h2>
             
