@@ -1,6 +1,6 @@
 import React from 'react';
 import './SoftSkillSection.css';
-import BackToTopButton from '../BackToTop/BackToTopButton';
+import BackToTopButton from '../../components/BackToTop/BackToTopButton';
 
 import softSkill_image1 from '../../images/soft-skills-ui-img/soft-skiil-img1.svg';
 import right_arrow from '../../images/soft-skills-ui-img/right-arrow.svg';

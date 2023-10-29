@@ -1,0 +1,24 @@
+
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 70vh;
+    margin: auto;
+    background-color: hwb(3 38% 0%); /* Red color */
+  }
+  
+  .not-found-heading {
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .not-found-text {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+  }
+  

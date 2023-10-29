@@ -1,7 +1,9 @@
 import{ React , useState } from 'react';
 import '../style/Signup.css';
-import { Link } from 'react-router-dom';
+import { Link , Navigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for styling
 
 
 const Signup = () => {
@@ -19,11 +21,23 @@ const Signup = () => {
 
     try {
       const response = await axios.post('http://localhost:8080/users/signup', {name, username, password });
-      console.log(response.data); // Handle the response as needed
+      console.log(response.data);
+     
+      // Use react-toastify to display a success message
+      toast.success("Signup successful!", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+
       setSuccessMessage('Signup successful!');
     } catch (error) {
       console.error(error); // Handle the error
-      setErrorMessage('User Already Registered !');
+      setErrorMessage('An Error Occurs Registered !');
+
+      // Use react-toastify to display an error message
+      toast.error("An error occurred during registration!", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+
     }
   };
 
@@ -48,7 +62,7 @@ const Signup = () => {
                     <br /> */}
                     <button type="submit" id="signup-btn">Sign up</button> 
                     {/* Display success message if it exists */}
-                    {successMessage && <p>{successMessage}</p>}
+                    {successMessage && <p>{successMessage}</p> && <Navigate to="/"></Navigate>}
                     {errorMessage && <p>{errorMessage}</p>}
                 </form>
                 <p>Already have an account, <Link to="/login">Sign Here</Link></p>

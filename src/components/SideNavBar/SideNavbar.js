@@ -1,12 +1,29 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, Navigate } from "react-router-dom";
 import "./SideNavbar.css";
 import ChatBox from "../ChatBot2/ChatBox";
+import { doLogout, getCurrentUserDetails, isLoggedIn } from "../../auth";
 
 const SideNavbar = ({children}) => {
+	
+	const[login, setLogin] = useState(false);
+	const[user, setUser] = useState(undefined);
+
+	useEffect(()=>{
+		setLogin(isLoggedIn);
+		setUser(getCurrentUserDetails);
+	},[login])
+
+	const logout = () =>{
+		doLogout(()=>{
+			//logout
+			setLogin(false);
+			<Navigate redirect to="/" />;
+		})
+	}
+
 
 	// Setting Hovering effect
-
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -17,6 +34,7 @@ const SideNavbar = ({children}) => {
         setIsHovered(false);
     };
 
+	
 	
 
 	const menuItems = [
@@ -51,12 +69,23 @@ const SideNavbar = ({children}) => {
 			target: "",
 		},
 		{
+			text: "Live Doubts",
+			icon: "icons/chatbot-icon.svg",
+            path: "/live-doubts",
+			target: "",
+		},
+		{
 			text: "Soft Skills",
 			icon: "icons/pie-chart.svg",
-            path: "/soft-skill",
+            path: "/user/soft-skill",
 			target: "",
 		},	
-		
+		{
+			text: "Calender",
+			icon: "icons/pie-chart.svg",
+            path: "/calender",
+			target: "",
+		},
 		{
 			text: "Whatsapp Me",
 			icon: "icons/whatsapp-icon.svg",
@@ -66,7 +95,7 @@ const SideNavbar = ({children}) => {
 		{
 			text: "Profile",
 			icon: "icons/user.svg",
-            path: "/user",
+            path: "/user/profile",
 			target: "",
 		},
 		{
@@ -75,12 +104,12 @@ const SideNavbar = ({children}) => {
 			path: "/setting",
             target: "",
 		},
-		{
-			text: "Login",
-			icon: "icons/login-icon.svg",
-            path: "/login",
-			target: "",
-		},
+		// {
+		// 	text: "Login",
+		// 	icon: "icons/login-icon.svg",
+        //     path: "/login",
+		// 	target: "",
+		// },
 	];
 	return (
         <div className="side-nav-container">
@@ -109,6 +138,7 @@ const SideNavbar = ({children}) => {
 						))}
 					</div>
 				</div>
+
 				<div className="nav-footer">
 					{isHovered && (
 						<div className="nav-details">
@@ -119,12 +149,21 @@ const SideNavbar = ({children}) => {
 								srcset=""
 							/>
 							<div className="nav-footer-info">
-								<p className="nav-footer-user-name">Rohit Kumar</p>
+								{
+									login && (
+										<p className="nav-footer-user-name">{user.name}</p>
+								 	) 
+								}
+								
 								{/* <p className="nav-footer-user-position">rohit09619@gmail.com</p> */}
 							</div>
 						</div>
 					)}
-					<img className="logout-icon" src="icons/logout.svg" alt="" srcset="" />
+			
+					<img className="logout-icon" src="icons/logout.svg" alt="" srcset="" onClick={logout} />
+						
+					
+					
 				</div>
 	      	</div>
 			<main>

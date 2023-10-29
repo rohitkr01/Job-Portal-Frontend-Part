@@ -3,7 +3,7 @@ import './Chat_Page.css';
 // import butterfly from '../../images/butterfly.png';
 
 
-import Chatbot from './Chatbot';
+import Chatbot from '../../components/ChatBot/Chatbot';
 
 function ChatUIPage() {
   return (

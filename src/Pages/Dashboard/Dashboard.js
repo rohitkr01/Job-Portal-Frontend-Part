@@ -138,7 +138,7 @@ function Dashboard() {
             website?Subscribe to our weekly job offer digest.</p>
           <div class="email-container">
             <input type="email" placeholder="Enter email address" />
-            <button>Subscribe</button>
+            <button>Subscribe us</button>
           </div>
         </div>
       </section>

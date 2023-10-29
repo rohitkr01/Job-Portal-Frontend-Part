@@ -1,0 +1,30 @@
+.loading-dots {
+    display: flex;
+    position: relative;
+    top: 2%;
+    left: 45%;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #0073e6;
+    margin: 0 5px;
+    opacity: 0.3;
+    animation: pulse 1s infinite;
+  }
+  
+  .dot.active {
+    opacity: 1;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  

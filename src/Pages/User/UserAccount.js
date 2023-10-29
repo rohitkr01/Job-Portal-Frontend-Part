@@ -1,39 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './UserAccount.css';
-import LoadingScreen from '../LoadingScreen/LoadingScreen';
+import LoadingAnimation from '../../components/LoadingScreen/LoadingAnimation';
+
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 function UserAccount() {
+
   const [userAccount, setUserAccount] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
   const [whatsappNumber, setWhatsappNumber] = useState('');
   const [address, setAddress] = useState('');
 
-  //To display successfull message
-  const [successMessage, setSuccessMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
-  const [showParagraph, setShowParagraph] = useState(false);
+ 
 
-  const handleButtonClick = () => {
-    setShowParagraph(true);
-
-    // Hide the paragraph after 5 seconds
-    setTimeout(() => {
-      setShowParagraph(false);
-    }, 5000);
-  };
+  // Retrieve the username from localStorage
+  const storedUserData = localStorage.getItem("userData");
+  const username = storedUserData ? JSON.parse(storedUserData).username : null;
+  
 
   useEffect(() => {
-    fetchUserAccount();
-  }, []);
 
+  // Use the `username` prop to construct the dynamic URL
+  const urltoget = `http://localhost:8080/users/${username}`;
+  
   const fetchUserAccount = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/users/aarav@gmail.com'); // Replace with your API endpoint
+      const response = await axios.get(urltoget); // Replace with your API endpoint
       setUserAccount(response.data);
       setName(response.data.name);
       setEmail(response.data.email);
@@ -48,10 +47,15 @@ function UserAccount() {
     }
   };
 
+  fetchUserAccount();
+  }, [username]);
+
+  const urltoupdate = `http://localhost:8080/users/update-user/${username}`;
+
   const updateDetails = async (e) => {
     e.preventDefault();
     try {
-      await axios.put('http://localhost:8080/users/update-user/aarav@gmail.com', {
+      await axios.put(urltoupdate, {
         name,
         email,
         mobileNumber: mobileNumber,
@@ -67,17 +71,19 @@ function UserAccount() {
         address,
       });
       console.log('User account updated successfully');
-      setSuccessMessage('Account updated !');
+      // setSuccessMessage('Account updated !');
+      toast.success("Account updated successfully");
     } catch (error) {
       console.error('Failed to update user account:', error);
-      setErrorMessage('An error occured !');
+      // setErrorMessage('An error occured !');
+      toast.error("Failed to update user details !")
     }
   };
 
   if (loading) {
     return (
       <div className="loading">
-        <LoadingScreen />
+        <LoadingAnimation />
       </div>
     );
   }
@@ -143,15 +149,14 @@ function UserAccount() {
           </div>
 
           <br />
-          <button type="submit" className="user-update-btn"  onClick={handleButtonClick} >Update</button>
-          {/* Display success mess  age if it exists */}
-          {showParagraph && successMessage && <p>{successMessage}</p> }
-          {showParagraph && errorMessage && <p>{errorMessage}</p> }
-
+          <button type="submit" className="user-update-btn" >Update</button>
+         
           </form>
       ) : (
         <div>No user account found.</div>
       )}
+
+      <ToastContainer/>
     </div>
   );
 }

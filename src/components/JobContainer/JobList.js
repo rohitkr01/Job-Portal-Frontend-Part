@@ -2,7 +2,8 @@ import React , { useEffect, useState }   from 'react';
 import axios from 'axios';
 import { FaMapMarkerAlt,FaBriefcase, FaRupeeSign } from 'react-icons/fa';
 
-import LoadingScreen from '../LoadingScreen/LoadingScreen';
+// import Loading from '../LoadingScreen/Loading';
+import LoadingAnimation from '../LoadingScreen/LoadingAnimation';
 import './Styles/JobList.css';
 // import axios from 'axios';
 
@@ -44,7 +45,7 @@ const JobList = () => {
     };
 
     if (loading) {
-        return <div className="loading"><LoadingScreen /></div>;
+        return <div className="loading"><LoadingAnimation /></div>;
     }
     
     if (error) {
